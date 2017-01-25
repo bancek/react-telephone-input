@@ -3707,7 +3707,7 @@ var ReactTelephoneInput = React.createClass({
     searchCountry: function searchCountry() {
         var probableCandidate = this._searchCountry(this.state.queryString) || this.props.onlyCountries[0];
         var probableCandidateIndex = findIndex(this.props.onlyCountries, probableCandidate) + this.state.preferredCountries.length;
-        console.log('probableCandidateIndex', probableCandidateIndex);
+
         this.scrollTo(this.getElement(probableCandidateIndex), true);
 
         this.setState({
@@ -3744,7 +3744,6 @@ var ReactTelephoneInput = React.createClass({
                 _moveHighlight(-1);
                 break;
             case keys.ENTER:
-                console.log('enter key', this.state.highlightCountryIndex, this.props.onlyCountries[this.state.highlightCountryIndex]);
                 this.handleFlagItemClick(this.state.preferredCountries.concat(this.props.onlyCountries)[this.state.highlightCountryIndex], event);
                 break;
             case keys.ESC:
